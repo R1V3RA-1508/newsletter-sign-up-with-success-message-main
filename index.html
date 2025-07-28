@@ -58,7 +58,7 @@
   </style>
 </head>
 <body>
-  <div class="sign-up-form m-auto w-xl h-xl mt-22 bg-white p-5 flex justify-between rounded-xl">
+  <div class="sign-up-form m-auto w-xl h-xl mt-22 bg-white p-5 flex justify-between rounded-xl" id="SIform">
     <!-- Sign-up form start -->
       <div class="left">
         <div class="title font-[Roboto] font-bold text-4xl">
@@ -75,10 +75,11 @@
         </div>
         <div class="form">
           <label for="email">Email address</label>
-          <div class="email border-solid border-black border rounded-md">
-            <input type="email" name="email" id="" placeholder="email@company.com" style="width: 100%; border: none; outline: none; background: transparent;">
+          <div class="email border-solid border-[hsl(0, 0%,58%)] border rounded-md">
+            <input type="email" name="email"  id="email" placeholder="email@company.com" style="width: 100%; border: none; outline: none; background: transparent;">
           </div>
-          <button type="submit" class="sub">Subscribe to monthly newsletter</button>
+          <div id="email-error" class="text-red-500 text-sm mt-1 hidden">Valid email required</div>
+          <button type="submit" onclick="subscribe()" class="sub">Subscribe to monthly newsletter</button>
         </div>
       </div>
       <div class="il ml-2"><img src="assets/images/illustration-sign-up-desktop.svg" alt=""></div>
@@ -103,5 +104,61 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script>
+
+      const SIform = document.getElementById("SIform");
+      const emailInput = document.getElementById("email");
+      const email = emailInput.value;
+      const emError = document.getElementById("email-error");
+      const successDiv = document.querySelector(".success");
+  
+      function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function subscribe() {
+      const email = emailInput.value.trim();
+      const emailContainer = document.querySelector('.email');
+      
+      if (!validateEmail(email)) {
+        // Показываем ошибку
+        // SIform.classList.add("hidden");
+        emailContainer.classList.add('invalid');
+        emError.classList.remove('hidden');
+        emailInput.focus();
+        return false;
+      }
+      // Если email валиден
+      emailContainer.classList.remove('invalid');
+      emError.classList.add('hidden');
+      
+      // Показываем сообщение об успехе
+      SIform.classList.add("hidden");
+      successDiv.classList.remove("hidden");
+      
+      // Обновляем email в сообщении
+      const successEmail = successDiv.querySelector('b');
+      successEmail.textContent = email;
+      
+      return false; // Предотвращаем отправку формы
+
+      // Добавляем валидацию при вводе
+    emailInput.addEventListener('input', function() {
+      const email = this.value.trim();
+      if (validateEmail(email)) {
+        document.querySelector('.email').classList.remove('invalid');
+        emError.classList.add('hidden');
+      }
+    });
+
+    // Добавляем обработчик для кнопки "Dismiss message"
+    document.querySelector('.success button').addEventListener('click', function() {
+      successDiv.classList.add('hidden');
+      SIform.classList.remove('hidden');
+      emailInput.value = '';
+    });
+    }
+  </script>
 </body>
 </html>
