@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body { background: hsl(234, 29%, 20%); }
+    /* Стили для кнопки с градиентом */
+    .sub {
+      width: 100%;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      margin-top: 4%;
+      
+      /* Градиентный фон */
+      background: hsl(234, 29%, 20%);
+      
+      /* Анимация */
+      transition: all 0.5s ease;
+    }
+
+    /* Состояние при наведении */
+    .sub:hover {
+      background: linear-gradient(90deg, #FF6A3A 0%, #FF527B 100%);
+      box-shadow: 0 10px 15px rgba(255, 82, 123, 0.3);
+    }
+
+    /* Состояние при нажатии */
+    .sub:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 5px rgba(255, 82, 123, 0.5);
+    }
+    .email:focus {
+      outline: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="sign-up-form m-auto w-xl h-xl mt-22 bg-white p-5 flex justify-between rounded-xl">
+    <!-- Sign-up form start -->
+      <div class="left">
+        <div class="title font-[Roboto] font-bold text-4xl">
+          Stay updated!
+        </div>
+        
+        <div class="parag text-base font-[Roboto] font-regular">
+          <div class="join mt-2 mb-2">Join 60,000+ product managers receiving monthly updates on: </div>
+          <div class="checks">
+            <div class="flex items-start"><img class='pr-1 pb-3' src="assets/images/icon-list.svg" alt="">Product discovery and building what matters<br></div>
+            <div class="flex items-start"><img class="pr-1 pb-3" src="assets/images/icon-list.svg" alt="">Measuring to ensure updates are a success<br></div>
+            <div class="flex items-start"><img class="pr-1 pb-3" src="assets/images/icon-list.svg" alt="">And much more!</div>
+          </div>
+        </div>
+        <div class="form">
+          <label for="email">Email address</label>
+          <div class="email border-solid border-black border rounded-md">
+            <input type="email" name="email" id="" placeholder="email@company.com" style="width: 100%; border: none; outline: none; background: transparent;">
+          </div>
+          <button type="submit" class="sub">Subscribe to monthly newsletter</button>
+        </div>
+      </div>
+      <div class="il ml-2"><img src="assets/images/illustration-sign-up-desktop.svg" alt=""></div>
+    </div>
+
+    <!-- Sign-up form end -->
+  </div>
+  <!-- Success message start -->
+  <div class="success hidden">
+    <div class="s-title">
+      Thanks for subscribing!
+    </div>
+    <div class="s-parag">
+      A confirmation email has been sent to <b>ash@loremcompany.com.</b>
+      Please open it and click the button inside to confirm your subscription.
+    </div>
+    <button type="submit">Dismiss message</button> 
+  </div>
+    <!-- Success message end -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
