@@ -54,13 +54,16 @@
     .email:focus {
       outline: none;
     }
+    .ihidden{
+      display: none !important;
+    }
 
   </style>
 </head>
 <body class="bg-white md:bg-cyan-950">
-  <div class="sign-up-form m-auto sm:w-xl smw-sm sm:h-xl smh-sm md:mt-25 bg-white md:p-5 pb-0 pl-5 pr-5 md:flex md:justify-between md:flex-row flex flex-col-reverse md:rounded-xl" id="SIform">
+  <div class="sign-up-form m-auto sm:w-xl sm:h-xl md:mt-25 bg-white md:p-5 md:flex md:justify-between md:flex-row flex flex-col-reverse md:rounded-xl" id="SIform">
     <!-- Sign-up form start -->
-      <div class="left">
+      <div class="left pb-0 pl-5 pr-5 md:p-0">
         <div class="title font-[Roboto] font-bold text-4xl sm:mt-2 mt-7">
           Stay updated!
         </div>
@@ -82,8 +85,8 @@
           <button type="submit" onclick="subscribe()" class="sub">Subscribe to monthly newsletter</button>
         </div>
       </div>
-      <div class="il"><img class="hidden sm:flex ml-2" src="assets/images/illustration-sign-up-desktop.svg" alt="">
-      <img class="sm:hidden flex" src="assets/images/illustration-sign-up-mobile.svg" alt=""></div>
+      <div class="il"><img class="hidden md:flex ml-2" src="assets/images/illustration-sign-up-desktop.svg" alt="">
+      <img class="md:hidden flex justify-center m-auto w-full" src="assets/images/illustration-sign-up-mobile.svg" alt=""></div>
     </div>
 
     <!-- Sign-up form end -->
@@ -136,7 +139,7 @@
       emError.classList.add('hidden');
       
       // Показываем сообщение об успехе
-      SIform.classList.add("hidden");
+      SIform.classList.add("ihidden");
       successDiv.classList.remove("hidden");
       
       // Обновляем email в сообщении
