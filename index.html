@@ -16,7 +16,7 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-    body { background: hsl(234, 29%, 20%); }
+    body {/* background: hsl(234, 29%, 20%);*/ }
     /* Стили для кнопки с градиентом */
     .sub, .dismiss{
       width: 100%;
@@ -57,11 +57,11 @@
 
   </style>
 </head>
-<body>
-  <div class="sign-up-form m-auto w-xl h-xl mt-25 bg-white p-5 flex justify-between rounded-xl" id="SIform">
+<body class="bg-white md:bg-cyan-950">
+  <div class="sign-up-form m-auto sm:w-xl smw-sm sm:h-xl smh-sm md:mt-25 bg-white md:p-5 pb-0 pl-5 pr-5 md:flex md:justify-between md:flex-row flex flex-col-reverse md:rounded-xl" id="SIform">
     <!-- Sign-up form start -->
       <div class="left">
-        <div class="title font-[Roboto] font-bold text-4xl">
+        <div class="title font-[Roboto] font-bold text-4xl sm:mt-2 mt-7">
           Stay updated!
         </div>
         
@@ -82,7 +82,8 @@
           <button type="submit" onclick="subscribe()" class="sub">Subscribe to monthly newsletter</button>
         </div>
       </div>
-      <div class="il ml-2"><img src="assets/images/illustration-sign-up-desktop.svg" alt=""></div>
+      <div class="il"><img class="hidden sm:flex ml-2" src="assets/images/illustration-sign-up-desktop.svg" alt="">
+      <img class="sm:hidden flex" src="assets/images/illustration-sign-up-mobile.svg" alt=""></div>
     </div>
 
     <!-- Sign-up form end -->
@@ -101,7 +102,7 @@
   </div>
     <!-- Success message end -->
   
-  <div class="attribution">
+  <div class="attribution hidden">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
