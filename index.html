@@ -18,7 +18,7 @@
     .attribution a { color: hsl(228, 45%, 44%); }
     body { background: hsl(234, 29%, 20%); }
     /* Стили для кнопки с градиентом */
-    .sub {
+    .sub, .dismiss{
       width: 100%;
       color: white;
       padding: 16px 24px;
@@ -41,13 +41,13 @@
     }
 
     /* Состояние при наведении */
-    .sub:hover {
+    .sub, .dismiss:hover {
       background: linear-gradient(90deg, #FF6A3A 0%, #FF527B 100%);
       box-shadow: 0 10px 15px rgba(255, 82, 123, 0.3);
     }
 
     /* Состояние при нажатии */
-    .sub:active {
+    .sub, .dismiss:active {
       transform: scale(0.98);
       box-shadow: 0 2px 5px rgba(255, 82, 123, 0.5);
     }
@@ -58,7 +58,7 @@
   </style>
 </head>
 <body>
-  <div class="sign-up-form m-auto w-xl h-xl mt-22 bg-white p-5 flex justify-between rounded-xl" id="SIform">
+  <div class="sign-up-form m-auto w-xl h-xl mt-25 bg-white p-5 flex justify-between rounded-xl" id="SIform">
     <!-- Sign-up form start -->
       <div class="left">
         <div class="title font-[Roboto] font-bold text-4xl">
@@ -88,15 +88,16 @@
     <!-- Sign-up form end -->
   </div>
   <!-- Success message start -->
-  <div class="success hidden">
-    <div class="s-title">
+  <div class="success m-auto w-sm h-xl mt-30 bg-white p-7 flex justify-between flex-col rounded-xl hidden">
+    <img src="assets/images/icon-success.svg" alt="" class="w-20 pb-2">
+    <div class="s-title font-[Roboto] font-bold text-4xl pb-2">
       Thanks for subscribing!
     </div>
-    <div class="s-parag">
-      A confirmation email has been sent to <b>ash@loremcompany.com.</b>
+    <div class="s-parag text-base font-[Roboto] font-regular">
+      A confirmation email has been sent to <b>ash@loremcompany.com</b>.
       Please open it and click the button inside to confirm your subscription.
     </div>
-    <button type="submit">Dismiss message</button> 
+    <button type="button" class="dismiss">Dismiss message</button> 
   </div>
     <!-- Success message end -->
   
